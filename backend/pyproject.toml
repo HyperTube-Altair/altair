@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "api for video player platfrom from torrent protocol"
+authors = ["Houssam-Eddine Moumanis <houssam.moumanis@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.6"
+djangorestframework = "^3.15.1"
+psycopg = "^3.1.19"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+pytest-django = "^4.8.0"
+flake8 = "^7.0.0"
+black = "^24.4.2"
+isort = "^5.13.2"
+pre-commit = "^3.7.1"
+django-environ = "^0.11.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 100
