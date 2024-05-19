@@ -1,32 +1,33 @@
 services:
+
     backend:
       build: backend
-      command: ["poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
+      restart: always
       volumes:
         - ./backend:/app
-      ports:
-        - "8000:8000" # TODO: remove when reverse proxy is added
       env_file:
         - .env
       depends_on:
         db:
           condition: service_healthy
+  
     frontend:
         build:
             context: ./frontend
-            dockerfile: dev.Dockerfile
+            dockerfile: Dockerfile
         restart: always
+        env_file:
+          - .env
         volumes:
             - ./frontend:/app
+
     db:
         image: postgres:12
         restart: always
         ports:
-            - "5432:5432"
-        environment:
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: postgres
-            POSTGRES_DB: postgres
+            - "5432:5432" # leave this port open for development purposes
+        env_file:
+            - .env
         volumes:
             - ./db:/var/lib/postgresql/data
         healthcheck:
@@ -34,6 +35,7 @@ services:
           interval: 5s
           timeout: 5s
           retries: 5
+
     nginx:
         image: nginx:1.17
         restart: always
@@ -44,9 +46,13 @@ services:
         depends_on:
             - frontend
             - db
+            - backend
+
     minio:
       image: bitnami/minio
       restart: always
+      env_file:
+        - .env
       ports:
         - '9000:9000'
         - '9001:9001'
