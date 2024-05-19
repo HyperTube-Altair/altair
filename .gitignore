@@ -1,2 +1,10 @@
 db
-blob
+blob.env
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+.DS_Store
+env/
+.venv/
+db_volume/
