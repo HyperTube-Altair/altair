@@ -3,10 +3,12 @@ services:
         build:
             context: ./frontend
             dockerfile: dev.Dockerfile
+        restart: always
         volumes:
             - ./frontend:/app
     db:
         image: postgres:12
+        restart: always
         ports:
             - "5432:5432"
         environment:
@@ -17,6 +19,7 @@ services:
             - ./db:/var/lib/postgresql/data
     nginx:
         image: nginx:1.17
+        restart: always
         ports:
             - "80:80"
         volumes:
@@ -25,7 +28,8 @@ services:
             - frontend
             - db
     minio:
-      image: docker.io/bitnami/minio:2022
+      image: bitnami/minio
+      restart: always
       ports:
         - '9000:9000'
         - '9001:9001'
@@ -33,5 +37,4 @@ services:
         - ./blob:/data
       environment:
         - MINIO_ROOT_USER=your_username
-        - MINIO_ROOT_PASSWORD=your_pasword
-        - MINIO_DEFAULT_BUCKETS=your_bucket_name
+        - MINIO_ROOT_PASSWORD=your_password
