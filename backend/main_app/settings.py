@@ -81,7 +81,7 @@ DATABASES = {
         "NAME": os.getenv("POSTGRES_DB", "hypertube"),
         "USER": os.getenv("POSTGRES_USER", "hypertube"),
         "PASSWORD": os.getenv("POSTGRES_PASSWORD", "hypertube"),
-        "HOST": os.getenv("POSTGRES_HOST", "localhost"),
+        "HOST": os.getenv("POSTGRES_HOST", "db"),
         "PORT": "5432",
     }
 }

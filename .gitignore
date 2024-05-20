@@ -1,3 +1,5 @@
+db
+blob
 .env
 __pycache__/
 *.py[cod]
