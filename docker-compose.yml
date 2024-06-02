@@ -19,7 +19,13 @@ services:
         env_file:
           - .env
         volumes:
-            - ./frontend:/app
+            - ./frontend/public:/app/public
+            - ./frontend/src:/app/src
+            - ./frontend/tailwind.config.ts:/app/tailwind.config.ts
+            - ./frontend/.eslintrc.json:/app/.eslintrc.json
+            - ./frontend/next-env.d.ts:/app/next-env.d.ts
+            - ./frontend/next.config.mjs:/app/next.config.mjs
+            - ./frontend/tsconfig.json:/app/tsconfig.json
 
     db:
         image: postgres:12
