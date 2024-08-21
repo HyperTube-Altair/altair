@@ -21,14 +21,15 @@ services:
         volumes:
             - ./frontend/public:/app/public
             - ./frontend/src:/app/src
-            - ./frontend/tailwind.config.ts:/app/tailwind.config.ts
             - ./frontend/.eslintrc.json:/app/.eslintrc.json
             - ./frontend/next-env.d.ts:/app/next-env.d.ts
             - ./frontend/next.config.mjs:/app/next.config.mjs
+            - ./frontend/postcss.config.mjs:/app/postcss.config.mjs
+            - ./frontend/tailwind.config.ts:/app/tailwind.config.ts
             - ./frontend/tsconfig.json:/app/tsconfig.json
 
     db:
-        image: postgres:12
+        image: postgres:13-bullseye
         restart: always
         ports:
             - "5432:5432" # leave this port open for development purposes
