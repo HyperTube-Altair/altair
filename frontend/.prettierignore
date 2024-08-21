@@ -1,0 +1,4 @@
+# Ignore artifacts:
+package.json
+package-lock.json
+postcss.config.mjs
