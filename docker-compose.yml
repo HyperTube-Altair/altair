@@ -22,7 +22,6 @@ services:
             - ./frontend/public:/app/public
             - ./frontend/src:/app/src
             - ./frontend/.eslintrc.json:/app/.eslintrc.json
-            - ./frontend/next-env.d.ts:/app/next-env.d.ts
             - ./frontend/next.config.mjs:/app/next.config.mjs
             - ./frontend/postcss.config.mjs:/app/postcss.config.mjs
             - ./frontend/tailwind.config.ts:/app/tailwind.config.ts
