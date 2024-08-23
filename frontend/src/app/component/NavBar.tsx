@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Navbar,
 	NavbarContent,
@@ -11,11 +11,28 @@ import {
 	DropdownMenu,
 	Avatar,
 	Input,
+	Button,
 } from '@nextui-org/react';
+import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 
 export const NavBar = () => {
+	const [isSearchOpen, setIsSearchOpen] = useState(false);
+	const [searchValue, setSearchValue] = useState<string | undefined>(undefined);
+
+	const applySearch = (searchValue: string | undefined): void => {
+		if (searchValue) {
+			// Perform the search operation using the searchValue
+			console.log('Searching for:', searchValue);
+			// Add your search logic here
+		} else {
+			// Handle the case when searchValue is undefined
+			alert('Please enter a search term');
+			// Add your handling logic here
+		}
+	};
+
 	return (
-		<Navbar isBordered shouldHideOnScroll>
+		<Navbar  shouldHideOnScroll className="absolute">
 			<NavbarContent className="hidden sm:flex" justify="start">
 				<NavbarItem>
 					<Link color="foreground" href="/dashboard">
@@ -34,9 +51,27 @@ export const NavBar = () => {
 				</NavbarItem>
 			</NavbarContent>
 			<NavbarContent as="div" justify="end">
-				<div>
-					
-					<Input placeholder="Search" radius='full' />
+				<div className=" flex flex-row justify-between items-center">
+					<Button
+						isIconOnly
+						color="warning"
+						variant="faded"
+						onClick={() => setIsSearchOpen(true)}
+						className={` transition-all ease-in bg-transparent border-none ${!isSearchOpen ? 'opacity-100' : 'opacity-0 w-0 h-0'}`}>
+						<MagnifyingGlassIcon className="w-6 h-6 text-gray-400" />
+					</Button>
+
+					<Input
+						placeholder="Search"
+						radius="full"
+						value={searchValue}
+						disabled={!isSearchOpen}
+						onChange={(e) => setSearchValue(e.target.value)}
+						onKeyDown={(e) => e.key === 'Enter' && applySearch(searchValue)}
+						className={` transition-all ease-in ${isSearchOpen ? ' duration-500 opacity-100' : ' duration-0 opacity-0 w-0 h-0'}`}
+						onBlur={() => !searchValue && setIsSearchOpen(false)}
+						endContent={<MagnifyingGlassIcon className="w-5 h-5 text-gray-400" />}
+					/>
 				</div>
 				<Dropdown placement="bottom-end">
 					<DropdownTrigger>
