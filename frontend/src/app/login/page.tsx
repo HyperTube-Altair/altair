@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardBody, Input, Button } from '@nextui-org/react';
 import { LockClosedIcon, UserIcon } from '@heroicons/react/16/solid';
 
