@@ -1,16 +1,14 @@
 'use client';
-import { Navbar, NavbarBrand, NavbarContent, Link } from '@nextui-org/react';
+
+import React from 'react';
+
+import { NavBar } from '@/app/component/NavBar';
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between border-2 ">
-			<Navbar>
-				<NavbarContent>
-					<NavbarBrand>
-						<Link href="/">Home</Link>
-					</NavbarBrand>
-				</NavbarContent>
-			</Navbar>
+		<main className=" flex min-h-screen flex-col items-center justify-between bg-[url('/main.jpg')] bg-cover">
+            <NavBar />
+			
 		</main>
 	);
 }
