@@ -3,7 +3,7 @@ import { LockClosedIcon, UserIcon } from '@heroicons/react/16/solid';
 
 const Page = () => {
 	return (
-		<main className='w-screen h-screen flex items-center justify-center bg-[url("/riponzl.jpg")]'>
+		<main className='w-screen h-screen flex items-center justify-center bg-[url("https://r4.wallpaperflare.com/wallpaper/94/797/206/kimi-no-na-wa-makoto-shinkai-starry-night-comet-wallpaper-89c0584d016a0d0be617288fb071564d.jpg")] bg-no-repeat bg-center bg-cover'>
 			<Card
 				className="w-[450px] max-w-[90%] min-w-[260px] h-[450px] flex items-center px-2 py-10 bg-white/5"
 				isBlurred>
