@@ -32,7 +32,7 @@ export const NavBar = () => {
 	};
 
 	return (
-		<Navbar  shouldHideOnScroll className="absolute">
+		<Navbar position='sticky' className="">
 			<NavbarContent className="hidden sm:flex" justify="start">
 				<NavbarItem>
 					<Link color="foreground" href="/dashboard">
