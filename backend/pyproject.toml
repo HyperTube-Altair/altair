@@ -4,12 +4,15 @@ version = "0.1.0"
 description = "api for video player platfrom from torrent protocol"
 authors = ["Houssam-Eddine Moumanis <houssam.moumanis@gmail.com>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
 django = "^5.0.6"
 djangorestframework = "^3.15.1"
 psycopg = "^3.1.19"
+celery = {extras = ["redis"], version = "^5.3.0"}
+
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.0"
