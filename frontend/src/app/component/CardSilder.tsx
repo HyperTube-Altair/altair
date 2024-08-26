@@ -15,7 +15,7 @@ export const CardSilder = ({ children }: ICardSilderProps) => {
 		return () => {
 			clearInterval();
 		};
-	}, []);
+	});
 	const scrollLeft = () => {
 		if (containerRef.current) {
 			containerRef.current.scrollBy({ left: -288, behavior: 'smooth' });

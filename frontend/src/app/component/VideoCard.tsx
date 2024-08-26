@@ -19,7 +19,7 @@ export const VideoCard = () => {
 	};
 	return (
 		<Card isFooterBlurred fullWidth={false} radius="sm" className=" relative h-64 w-40">
-			<Image className="object-cover" src="https://picsum.photos/160/256" height={256} width={160} />
+			<Image className="object-cover" src="https://picsum.photos/160/256" height={256} width={160} alt='' />
 			<Tooltip content={`${rating}/5`} placement="top" size="sm">
 				<div className="absolute flex z-10 top-1 right-1">{getRating(rating)}</div>
 			</Tooltip>
