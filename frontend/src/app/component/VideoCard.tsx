@@ -1,7 +1,9 @@
 'use client';
+
 import { StarIcon } from '@heroicons/react/16/solid';
 import { ClockIcon, HeartIcon, PlusCircleIcon } from '@heroicons/react/24/outline';
-import { Button, Card, CardFooter, Chip, Image, Tooltip } from '@nextui-org/react';
+import { Button, Card, CardFooter, Image, Tooltip } from '@nextui-org/react';
+import { useEffect } from 'react';
 
 export const VideoCard = () => {
 	const rating = 4;
@@ -16,20 +18,14 @@ export const VideoCard = () => {
 		return stars;
 	};
 	return (
+		
 		<Card
-			isPressable
 			isFooterBlurred
+			fullWidth={false}
 			radius="lg"
-			className=" relative border-none h-80 w-64"
-			onPress={() => alert('Card pressed')}>
-			<Image
-				alt="Woman listing to music"
-				className="object-cover"
-				src="https://picsum.photos/id/1/256/320"
-				height={320}
-				width={256}
-			/>
-			<Tooltip content={`${rating}/5`} placement="top" size='sm'>
+			className=" relative border-none h-80 w-72">
+			<Image className="object-cover" src="https://picsum.photos/288/320" height={384} width={288} />
+			<Tooltip content={`${rating}/5`} placement="top" size="sm">
 				<div className="absolute flex z-10 top-1 right-1">{getRating(rating)}</div>
 			</Tooltip>
 			<CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
@@ -39,7 +35,7 @@ export const VideoCard = () => {
 						<p className="text-tiny text-white/60">2024</p>
 					</div>
 				</div>
-				<div className="flex">
+				<div className="flex gap-1">
 					<Tooltip content="Watch later" placement="top">
 						<Button
 							className="text-tiny text-white bg-black/20"
