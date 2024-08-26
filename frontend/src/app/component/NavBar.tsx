@@ -33,26 +33,21 @@ export const NavBar = () => {
 	};
 
 	return (
-		<Navbar position="sticky" className=" px-24" maxWidth="full">
-			<NavbarBrand>
-				<Link href="/" color="foreground">
-					<span className="text-2xl font-bold text-white">Hypertube</span>
-				</Link>
-			</NavbarBrand>
+		<Navbar position="sticky" isBlurred={true} className=" px-10 !bg-transparent" maxWidth="full">
 			<NavbarContent className="hidden sm:flex" justify="center">
 				<NavbarItem>
 					<Link color="foreground" href="/dashboard">
-						Dashboard
+						<span className='font-bold text-white' >Dashboard</span>
 					</Link>
 				</NavbarItem>
 				<NavbarItem isActive>
-					<Link href="#" aria-current="page" color="secondary">
-						Movies
+					<Link href="#" aria-current="page">
+					<span className='font-bold text-white' >Movies</span>
 					</Link>
 				</NavbarItem>
 				<NavbarItem>
 					<Link color="foreground" href="#">
-						Series
+						<span className='font-bold text-white' >TV Shows</span>
 					</Link>
 				</NavbarItem>
 			</NavbarContent>

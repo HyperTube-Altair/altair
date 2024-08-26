@@ -56,7 +56,7 @@ export const CardSilder = ({ children }: ICardSilderProps) => {
 				<ArrowLeftCircleIcon className="group-hover/left-btn:text-secondary-700 group-hover/left-btn:scale-125 duration-700  transition text-secondary/40 hover:!text-secondary-800" />
 			</Button>
 
-			<div ref={containerRef} className="grid grid-flow-col gap-6 overflow-x-hidden">
+			<div ref={containerRef} className="flex gap-6 overflow-x-hidden">
 				{children}
 			</div>
 			<Button

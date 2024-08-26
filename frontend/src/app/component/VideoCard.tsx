@@ -18,7 +18,7 @@ export const VideoCard = () => {
 		return stars;
 	};
 	return (
-		<Card isFooterBlurred fullWidth={false} radius="sm" className=" relative h-64 w-40">
+		<Card isFooterBlurred fullWidth={false} radius="sm" className=" relative h-64 w-40 shrink-0 grow-0">
 			<Image className="object-cover" src="https://picsum.photos/160/256" height={256} width={160} alt='' />
 			<Tooltip content={`${rating}/5`} placement="top" size="sm">
 				<div className="absolute flex z-10 top-1 right-1">{getRating(rating)}</div>
@@ -30,13 +30,14 @@ export const VideoCard = () => {
 						<p className="text-tiny text-white/60">2024</p>
 					</div>
 				</div>
-				<div className="flex items-center justify-center w-full">
+				<div className="flex items-center justify-center w-full gap-0.5">
 					<Tooltip content="Watch later" placement="top">
 						<Button
 							className="text-tiny text-white bg-black/20"
 							variant="flat"
 							color="default"
 							isIconOnly
+							
 							size="sm">
 							<ClockIcon className="w-4 h-4" />
 						</Button>

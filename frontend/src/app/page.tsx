@@ -10,8 +10,8 @@ import { CardSilder } from './component/CardSilder';
 
 export default function Home() {
 	return (
-		<main className="flex  min-h-screen flex-col items-center  bg-[url('/main.jpg')] bg-secondary-200/30 bg-top  bg-contain bg-no-repeat -mt-16">
-			<div className="absolute z-[1] inset-0 bg-gradient-to-bl from-transparent to-90% via-black/15  to-secondary-200/30" />
+		<main className="flex  min-h-screen max-w-[1920px] flex-col items-center  bg-[url('/main.jpg')] bg-secondary-200/30 bg-top bg-blend-hard-light bg-contain bg-no-repeat -mt-16 m-auto">
+			<div className="absolute z-[1] inset-0 bg-gradient-to-bl from-transparent via-black/15  to-secondary-200/30 h-screen" />
 			<div className="flex flex-col z-10 items-start justify-center  h-1/2 w-2/5 min-h-[400px] max-h-[436px] mt-16  self-start p-4 gap-3">
 				<h1 className=" text-6xl font-bold text-start text-white capitalize">big movies name here</h1>
 				<div className="felx gap-4 mt-8">
@@ -20,7 +20,7 @@ export default function Home() {
 					<span className="text-white text-md font-bold">2021</span>
 				</div>
 				<div className="flex gap-4 self-start items-center w-full ">
-					<Button color="secondary" size="lg" className="bg-secondary-300 w-1/2" radius="full">
+					<Button color="secondary" size="lg" className="bg-secondary-300 w-40" radius="full">
 						<span className=" capitalize font-bold">PLAY</span>
 					</Button>
 					<Button size="lg" radius="full" isIconOnly className="bg-transparent">
@@ -43,7 +43,7 @@ export default function Home() {
 					<TicketIcon className="w-7 h-7 text-secondary" />
 					New Releases
 				</h1>
-				<div className="grid grid-cols-8 place-items-center gap-2">
+				<div className="flex flex-wrap gap-6">
 					{Array.from({ length: 13 }).map((_, i) => (
 						<VideoCard key={i} />
 					))}
