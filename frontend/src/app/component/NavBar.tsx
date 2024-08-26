@@ -12,6 +12,7 @@ import {
 	Avatar,
 	Input,
 	Button,
+	NavbarBrand,
 } from '@nextui-org/react';
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 
@@ -32,8 +33,13 @@ export const NavBar = () => {
 	};
 
 	return (
-		<Navbar position='sticky' className="">
-			<NavbarContent className="hidden sm:flex" justify="start">
+		<Navbar position="sticky" className=" px-24" maxWidth="full">
+			<NavbarBrand>
+				<Link href="/" color="foreground">
+					<span className="text-2xl font-bold text-white">Hypertube</span>
+				</Link>
+			</NavbarBrand>
+			<NavbarContent className="hidden sm:flex" justify="center">
 				<NavbarItem>
 					<Link color="foreground" href="/dashboard">
 						Dashboard
