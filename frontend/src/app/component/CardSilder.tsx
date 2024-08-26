@@ -43,7 +43,7 @@ export const CardSilder = ({ children }: ICardSilderProps) => {
 	};
 
 	return (
-		<div className="relative">
+		<div className="relative py-1 ">
 			<Button
 				className="group/left-btn absolute z-50 transition ease-in-out duration-700 !bg-transparent hover:bg-gradient-to-r from-secondary to-transparent h-full left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2"
 				onClick={scrollLeft}
@@ -56,7 +56,7 @@ export const CardSilder = ({ children }: ICardSilderProps) => {
 				<ArrowLeftCircleIcon className="group-hover/left-btn:text-secondary-700 group-hover/left-btn:scale-125 duration-700  transition text-secondary/40 hover:!text-secondary-800" />
 			</Button>
 
-			<div ref={containerRef} className="grid grid-flow-col gap-2 overflow-x-hidden ">
+			<div ref={containerRef} className="grid grid-flow-col gap-6 overflow-x-hidden">
 				{children}
 			</div>
 			<Button
