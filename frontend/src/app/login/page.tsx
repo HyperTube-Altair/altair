@@ -7,10 +7,10 @@ const Page = () => {
 		<main className='w-screen h-screen flex items-center justify-center bg-[url("https://r4.wallpaperflare.com/wallpaper/94/797/206/kimi-no-na-wa-makoto-shinkai-starry-night-comet-wallpaper-89c0584d016a0d0be617288fb071564d.jpg")] bg-no-repeat bg-center bg-cover'>
 			<Card className="w-[450px] max-w-[90%] min-w-[260px] h-[550px] flex items-center px-2 bg-white/5" isBlurred>
 				<CardBody className="space-y-4 flex items-center justify-start h-full w-3/4 mt-6">
-					<Tabs key={'test'} color="secondary" radius="full" size="lg" fullWidth>
+					<Tabs key={'authentication tabs'} color="secondary" radius="full" size="lg" fullWidth>
 						<Tab key="login" title="Login">
 							<form className="flex flex-col h-full w-full gap-2">
-								<div className="text-3xl font-bold text-gray-300 flex justify-center">Login</div>
+								<span className="text-3xl font-bold text-gray-300 flex justify-center">Login</span>
 								<Input
 									type="email"
 									variant="bordered"
@@ -27,13 +27,13 @@ const Page = () => {
 									classNames={{ label: 'text-white' }}
 									endContent={<LockClosedIcon className="w-6 text-white self-center" />}
 								/>
-								<div className="text-gray-400 w-full flex-row text-end hover:text-blue-500 cursor-pointer">
+								<span className="text-gray-400 w-full flex-row text-end hover:text-blue-500 cursor-pointer">
 									Forgot password?
-								</div>
+								</span>
 								<Button size="lg" className="w-full" radius="full">
 									login
 								</Button>
-								<div className="flex flex-col items-center text-gray-400">Or</div>
+								<span className="flex flex-col items-center text-gray-400">Or</span>
 								<div className="bg-white/20 rounded-full p-1 flex items-center space-x-3">
 									<img
 										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXfAZMOWHDQ3DKE63A9jWhIqQaKcKqUIXvzg&s"
@@ -52,7 +52,7 @@ const Page = () => {
 						</Tab>
 						<Tab key="register" title="Register">
 							<form className="flex flex-col h-full w-full gap-2" onSubmit={() => alert('Submitted!')}>
-								<div className="text-3xl font-bold text-gray-300 flex justify-center">Register</div>
+								<span className="text-3xl font-bold text-gray-300 flex justify-center">Register</span>
 								<Input
 									type="email"
 									variant="bordered"
@@ -80,7 +80,7 @@ const Page = () => {
 								<Button size="lg" className="w-full" radius="full">
 									register
 								</Button>
-								<div className="flex flex-col items-center text-gray-400">Or</div>
+								<span className="flex flex-col items-center text-gray-400">Or</span>
 								<div className="bg-white/20 rounded-full p-1 flex items-center space-x-3">
 									<img
 										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXfAZMOWHDQ3DKE63A9jWhIqQaKcKqUIXvzg&s"
