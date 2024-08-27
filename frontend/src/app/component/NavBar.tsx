@@ -12,7 +12,6 @@ import {
 	Avatar,
 	Input,
 	Button,
-	NavbarBrand,
 } from '@nextui-org/react';
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 
@@ -37,17 +36,17 @@ export const NavBar = () => {
 			<NavbarContent className="hidden sm:flex" justify="center">
 				<NavbarItem>
 					<Link color="foreground" href="/dashboard">
-						<span className='font-bold text-white' >Dashboard</span>
+						<span className="font-bold text-white">Dashboard</span>
 					</Link>
 				</NavbarItem>
 				<NavbarItem isActive>
 					<Link href="#" aria-current="page">
-					<span className='font-bold text-white' >Movies</span>
+						<span className="font-bold text-white">Movies</span>
 					</Link>
 				</NavbarItem>
 				<NavbarItem>
 					<Link color="foreground" href="#">
-						<span className='font-bold text-white' >TV Shows</span>
+						<span className="font-bold text-white">TV Shows</span>
 					</Link>
 				</NavbarItem>
 			</NavbarContent>

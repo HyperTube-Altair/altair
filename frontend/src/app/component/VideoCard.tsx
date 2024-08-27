@@ -3,7 +3,6 @@
 import { StarIcon } from '@heroicons/react/16/solid';
 import { ClockIcon, HeartIcon, PlusCircleIcon } from '@heroicons/react/24/outline';
 import { Button, Card, CardFooter, Image, Tooltip } from '@nextui-org/react';
-import { useEffect } from 'react';
 
 export const VideoCard = () => {
 	const rating = 4;
@@ -19,7 +18,7 @@ export const VideoCard = () => {
 	};
 	return (
 		<Card isFooterBlurred fullWidth={false} radius="sm" className=" relative h-64 w-40 shrink-0 grow-0">
-			<Image className="object-cover" src="https://picsum.photos/160/256" height={256} width={160} alt='' />
+			<Image className="object-cover" src="https://picsum.photos/160/256" height={256} width={160} alt="" />
 			<Tooltip content={`${rating}/5`} placement="top" size="sm">
 				<div className="absolute flex z-10 top-1 right-1">{getRating(rating)}</div>
 			</Tooltip>
@@ -37,7 +36,6 @@ export const VideoCard = () => {
 							variant="flat"
 							color="default"
 							isIconOnly
-							
 							size="sm">
 							<ClockIcon className="w-4 h-4" />
 						</Button>
