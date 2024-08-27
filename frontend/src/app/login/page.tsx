@@ -33,7 +33,7 @@ const Page = () => {
 						login
 					</Button>
 					<div className="text-gray-400 w-full flex-row text-center">
-						Don&rsquo;t have an account?{' '}
+						Don&rsquo;t have an account?
 						<span className="hover:text-blue-500 cursor-pointer">Register</span>
 					</div>
 				</CardBody>
