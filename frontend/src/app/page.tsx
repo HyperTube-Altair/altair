@@ -34,7 +34,7 @@ export default function Home() {
 					Recommended
 				</h1>
 				<CardSilder>
-					{Array.from({ length: 10 }).map((_, i) => (
+					{Array.from({ length: 100 }).map((_, i) => (
 						<VideoCard key={i} />
 					))}
 				</CardSilder>
@@ -44,7 +44,7 @@ export default function Home() {
 					New Releases
 				</h1>
 				<div className="flex flex-wrap gap-6">
-					{Array.from({ length: 13 }).map((_, i) => (
+					{Array.from({ length: 100 }).map((_, i) => (
 						<VideoCard key={i} />
 					))}
 				</div>
