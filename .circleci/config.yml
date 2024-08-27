@@ -13,9 +13,9 @@ jobs:
       - run: make env && make
   build_and_test_frontend:
     executor: node/default
+    working_directory: ~/frontend
     steps:
-      - checkout:
-         path: ./frontend
+      - checkout
       - run: 
           command: pwd && ls -la
           name: debug
