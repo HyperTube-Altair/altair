@@ -17,6 +17,9 @@ jobs:
     steps:
       - checkout
       - run: 
+          command: pwd && ls -la
+          name: debug
+      - run: 
           command: npm ci
           name: Install dependencies
       - run:  
