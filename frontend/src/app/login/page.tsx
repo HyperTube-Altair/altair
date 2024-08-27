@@ -31,7 +31,7 @@ const Page = () => {
 									Forgot password?
 								</span>
 								<Button size="lg" className="w-full" radius="full">
-									login
+									Login
 								</Button>
 								<span className="flex flex-col items-center text-gray-400">Or</span>
 								<div className="bg-white/20 rounded-full p-1 flex items-center space-x-3">
@@ -78,7 +78,7 @@ const Page = () => {
 									endContent={<LockClosedIcon className="w-6 text-white self-center" />}
 								/>
 								<Button size="lg" className="w-full" radius="full">
-									register
+									Register
 								</Button>
 								<span className="flex flex-col items-center text-gray-400">Or</span>
 								<div className="bg-white/20 rounded-full p-1 flex items-center space-x-3">
