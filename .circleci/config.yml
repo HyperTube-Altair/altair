@@ -16,8 +16,8 @@ jobs:
     steps:
       - checkout
       - run: 
-      command: cd frontend && npm ci
-      name: Install dependencies
+          command: cd frontend && npm ci
+          name: Install dependencies
       - run: npm run lint 
       - run:  npm run check-format
         
