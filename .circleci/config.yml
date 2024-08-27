@@ -12,15 +12,15 @@ jobs:
       - checkout
       - run: make env && make
   build_and_test_frontend:
-    working_directory: ./frontend
     executor: node/default
     steps:
-      - checkout
+      - checkout:
+         path: ./frontend
       - run: 
           command: pwd && ls -la
           name: debug
       - run: 
-          command: cd fronend && npm ci
+          command: npm ci
           name: Install dependencies
       - run:  
           command: npm run check-format
