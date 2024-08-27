@@ -13,20 +13,16 @@ jobs:
       - run: make env && make
   build_and_test_frontend:
     executor: node/default
-    working_directory: ~/frontend
     steps:
       - checkout
       - run: 
-          command: pwd && ls -la
-          name: debug
-      - run: 
-          command: npm ci
+          command: cd frontend && npm ci
           name: Install dependencies
       - run:  
-          command: npm run check-format
+          command: cd frontend && npm run check-format
           name: Check format
       - run:
-          command: npm run lint
+          command: cd frontend && npm run lint
           name: Lint
         
 
