@@ -1,7 +1,9 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@5.3.0
+  node: circleci/node@6.1.0
+  python: circleci/python@2.1.1
+
 
 jobs:
   build:
@@ -26,10 +28,23 @@ jobs:
       - run:
           command: cd frontend && npm run lint
           name: Lint
-
+  build_and_test_backend:
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          command:  cd backend && python manage.py check
+          name: Check
+      - run:
+          command: cd backend && python manage.py makemigrations --check
+          name: Check migrations
+      - run:
+          command: cd backend && pre-commit run --all-files
+          name: Pre-commit
 
 workflows:
   build app:
     jobs:
       - build
       - build_and_test_frontend
+      - build_and_test_backend
