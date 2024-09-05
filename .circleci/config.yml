@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   node: circleci/node@6.1.0
-  python: circleci/python@2.1.1
 
 
 jobs:
@@ -29,9 +28,13 @@ jobs:
           command: cd frontend && npm run lint
           name: Lint
   build_and_test_backend:
-    executor: python/default
+    docker:
+      - image: cimg/python:3.12.4
     steps:
       - checkout
+      - run:
+          command: cd backend && poetry install
+          name: Install dependencies
       - run:
           command:  cd backend && python manage.py check
           name: Check
