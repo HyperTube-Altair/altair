@@ -5,13 +5,13 @@ from celery import Celery
 # Set the default environment variables if they are not set
 os.environ.setdefault(
     "CELERY_BROKER_URL",
-    f"redis://:{os.environ.get('REDIS_PASSWORD', 'aloha')}"
-    f"@{os.environ.get('REDIS_HOST', 'localhost')}:6379/0",
+    f"redis://:{os.environ.get('REDIS_PASSWORD', 'aloha')}"  # noqa E231
+    f"@{os.environ.get('REDIS_HOST', 'localhost')}:6379/0",  # noqa E231
 )
 os.environ.setdefault(
     "CELERY_RESULT_BACKEND",
-    f"redis://:{os.environ.get('REDIS_PASSWORD', 'aloha')}"
-    f"@{os.environ.get('REDIS_HOST', 'localhost')}:6379/0",
+    f"redis://:{os.environ.get('REDIS_PASSWORD', 'aloha')}"  # noqa E231
+    f"@{os.environ.get('REDIS_HOST', 'localhost')}:6379/0",  # noqa E231
 )
 os.environ.setdefault("CELERY_TIMEZONE", "UTC")
 

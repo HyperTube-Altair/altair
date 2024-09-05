@@ -1,5 +1,6 @@
-from django.db import models
 from django.contrib.auth.hashers import make_password
+from django.db import models
+
 from Common.enums.Languages import Languages
 from movies.models import Video
 
@@ -11,7 +12,9 @@ class User(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=128, null=False, blank=False)
     profile_picture = models.ImageField(null=True, blank=True)
-    prefered_lang = models.CharField(max_length=10, choices=Languages.get_languages(), default=Languages.ENGLISH)
+    prefered_lang = models.CharField(
+        max_length=10, choices=Languages.get_languages(), default=Languages.ENGLISH
+    )
     create_at = models.DateField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
@@ -19,7 +22,7 @@ class User(models.Model):
     watched = models.ManyToManyField(Video, related_name="watched_by")
 
     def save(self, *args, **kwargs):
-        if not self.pk or 'password' in self.get_dirty_fields():
+        if not self.pk or "password" in self.get_dirty_fields():
             self.password = make_password(self.password)
         return super().save(*args, **kwargs)
 
