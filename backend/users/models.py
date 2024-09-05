@@ -10,16 +10,18 @@ class User(models.Model):
     last_name = models.CharField(max_length=200)
     email = models.EmailField()
     password = models.CharField(max_length=128, null=False, blank=False)
-    profile_picture = models.ImageField(null=True, blank=True)
+    profile_picture = models.ImageField(null=True, blank=True, upload_to="profile_pictures/")
     prefered_lang = models.CharField(max_length=10, choices=Languages.get_languages(), default=Languages.ENGLISH)
     create_at = models.DateField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
     # relationships
-    watched = models.ManyToManyField(Video, related_name="watched_by")
+    watched = models.ManyToManyField(Video, related_name="watched_by", blank=True)
 
     def save(self, *args, **kwargs):
-        if not self.pk or 'password' in self.get_dirty_fields():
+        if self.pk and self.password:
+            self.password = make_password(self.password)
+        elif not self.pk:
             self.password = make_password(self.password)
         return super().save(*args, **kwargs)
 
