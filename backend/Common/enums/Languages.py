@@ -7,4 +7,8 @@ class Languages(enum.Enum):
 
     @classmethod
     def get_languages(cls):
-        return {lang.name: lang.value for lang in cls}
+        return [(lang.value, lang.name) for lang in cls]
+
+    @classmethod
+    def get_default(cls):
+        return cls.ENGLISH

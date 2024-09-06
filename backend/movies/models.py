@@ -26,7 +26,9 @@ class Video(models.Model):
 
 class Subtitle(models.Model):
     language = models.CharField(
-        max_length=10, choices=Languages.get_languages(), default=Languages.ENGLISH
+        max_length=10,
+        choices=Languages.get_languages(),
+        default=Languages.get_default(),
     )
     video = models.ForeignKey(Video, on_delete=models.CASCADE, related_name="subtitles")
     file = models.FileField()
