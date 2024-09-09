@@ -36,6 +36,9 @@ jobs:
           command: cd backend && poetry install
           name: Install dependencies
       - run:
+          command: cd backend && pip freeze
+          name: check if django insalled
+      - run:
           command:  cd backend && python manage.py check
           name: Check
       - run:
