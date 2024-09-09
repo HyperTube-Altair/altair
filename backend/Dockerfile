@@ -17,7 +17,7 @@ RUN apt-get update \
 # Install dependencies
 RUN poetry install
 
-# Copy everything from the builder stage
+# Copy the rest of the application
 COPY . /app/
 
 # Ensure entrypoint.sh is executable
