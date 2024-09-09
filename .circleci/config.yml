@@ -1,7 +1,8 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@5.3.0
+  node: circleci/node@6.1.0
+
 
 jobs:
   build:
@@ -14,22 +15,43 @@ jobs:
           command: make env && make
           name: Build app
   build_and_test_frontend:
+    working_directory: ~/project/frontend
     executor: node/default
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
       - run:
-          command: cd frontend && npm ci
+          command: npm ci
           name: Install dependencies
       - run:
-          command: cd frontend && npm run check-format
+          command: npm run check-format
           name: Check format
       - run:
-          command: cd frontend && npm run lint
+          command: npm run lint
           name: Lint
-
+  build_and_test_backend:
+    working_directory: ~/project/backend
+    docker:
+      - image: cimg/python:3.11.10
+    steps:
+      - checkout:
+          path: ~/project
+      - run:
+          command: poetry config virtualenvs.create false && poetry install
+          name: Install dependencies
+      - run:
+          command:  python manage.py check
+          name: Check
+      - run:
+          command: python manage.py makemigrations --check
+          name: Check migrations
+      - run:
+          command: poetry run pre-commit run --all-files
+          name: Pre-commit
 
 workflows:
   build app:
     jobs:
       - build
       - build_and_test_frontend
+      - build_and_test_backend
