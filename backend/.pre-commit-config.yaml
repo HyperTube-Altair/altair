@@ -17,3 +17,6 @@ repos:
     rev: 3.7.9
     hooks:
       - id: flake8
+        args:
+          - --exclude=*/migrations/*
+          - --max-line-length=120
