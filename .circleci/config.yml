@@ -45,7 +45,7 @@ jobs:
           command: cd backend && python manage.py makemigrations --check
           name: Check migrations
       - run:
-          command: cd backend && pre-commit run --all-files
+          command: cd backend && poetry run pre-commit run --all-files
           name: Pre-commit
 
 workflows:
