@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-ebwn=qk4lm)p3*l7&qh_+^%8_1c7_i6^n-x1g=_3*dxyqi6#ig"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("Django_DEBUG", "Flase") == "True"
+DEBUG = os.getenv("Django_DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = []
 
@@ -109,6 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "users.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -147,7 +148,7 @@ DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 MINIO_ACCESS_KEY = os.getenv("MINIO_ROOT_USER")
 MINIO_SECRET_KEY = os.getenv("MINIO_ROOT_PASSWORD")
 MINIO_BUCKET_NAME = os.getenv("MINIO_DEFAULT_BUCKETS")
-MINIO_ENDPOINT = f'http://{os.getenv("MINIO_HOST", "minio")}:9000'
+MINIO_ENDPOINT = f'http://{os.getenv("MINIO_HOST", "minio")}:9000'  # noqa E231
 
 AWS_ACCESS_KEY_ID = MINIO_ACCESS_KEY
 AWS_SECRET_ACCESS_KEY = MINIO_SECRET_KEY
