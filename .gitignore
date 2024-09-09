@@ -11,3 +11,4 @@ env/
 db_volume/
 venv
 redis
+.vscode
