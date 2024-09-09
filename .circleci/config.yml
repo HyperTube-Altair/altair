@@ -15,37 +15,38 @@ jobs:
           command: make env && make
           name: Build app
   build_and_test_frontend:
+    working_directory: ~/project/frontend
     executor: node/default
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
       - run:
-          command: cd frontend && npm ci
+          command: npm ci
           name: Install dependencies
       - run:
-          command: cd frontend && npm run check-format
+          command: npm run check-format
           name: Check format
       - run:
-          command: cd frontend && npm run lint
+          command: npm run lint
           name: Lint
   build_and_test_backend:
+    working_directory: ~/project/backend
     docker:
-      - image: cimg/python:3.12.4
+      - image: cimg/python:3.11.10
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
       - run:
-          command: cd backend && poetry config virtualenvs.create false && poetry install
+          command: poetry config virtualenvs.create false && poetry install
           name: Install dependencies
       - run:
-          command: cd backend && pip freeze
-          name: check if django insalled
-      - run:
-          command:  cd backend && python manage.py check
+          command:  python manage.py check
           name: Check
       - run:
-          command: cd backend && python manage.py makemigrations --check
+          command: python manage.py makemigrations --check
           name: Check migrations
       - run:
-          command: cd backend && poetry run pre-commit run --all-files
+          command: poetry run pre-commit run --all-files
           name: Pre-commit
 
 workflows:
