@@ -65,7 +65,7 @@ services:
         - '9000:9000'
         - '9001:9001'
       volumes:
-        - ./blob:/data
+        - ./blob:/bitnami/minio/data
 
     redis:
       image: redis:7.4
