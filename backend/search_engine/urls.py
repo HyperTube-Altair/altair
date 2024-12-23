@@ -1,2 +1,7 @@
-from django.urls import path  # noqa: F401
+from django.urls import path
 
+import search_engine.views as views
+
+urlpatterns = [
+    path("popular", views.get_popular_movies, name="popular-movies"),
+]
