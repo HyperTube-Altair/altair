@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "users",
     "comments",
     "search_engine",
+    "drf_spectacular",
     "storages",
 ]
 
@@ -159,3 +160,18 @@ AWS_QUERYSTRING_AUTH = True
 AWS_S3_FILE_OVERWRITE = False
 
 
+# rest framework settings
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
+    ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+# api swagger settings
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Your Project API",
+    "DESCRIPTION": "Your project description",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
