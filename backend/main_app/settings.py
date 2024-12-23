@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "movies",
     "users",
     "comments",
+    "search_engine",
     "storages",
 ]
 
@@ -143,6 +144,7 @@ STORAGES = {
     },
 }
 
+# blob storage settings
 MINIO_ACCESS_KEY = os.getenv("MINIO_ROOT_USER")
 MINIO_SECRET_KEY = os.getenv("MINIO_ROOT_PASSWORD")
 MINIO_BUCKET_NAME = os.getenv("MINIO_DEFAULT_BUCKETS")
@@ -155,3 +157,5 @@ AWS_S3_ENDPOINT_URL = MINIO_ENDPOINT
 AWS_DEFAULT_ACL = None
 AWS_QUERYSTRING_AUTH = True
 AWS_S3_FILE_OVERWRITE = False
+
+
