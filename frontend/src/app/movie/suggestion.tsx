@@ -1,14 +1,21 @@
 import { Card, CardBody } from '@nextui-org/card';
 import { Image } from '@nextui-org/image';
 
-export default function Suggestion() {
+interface Props {
+	thumbnailUrl: string;
+	movieName: string;
+	releaseYear: string;
+	id: string;
+}
+
+export default function Suggestion(props: Props) {
 	return (
 		<Card isBlurred>
-			<CardBody className="flex flex-row gap-[10px]">
-				<Image width="120px" src="https://nextui.org/images/hero-card-complete.jpeg"></Image>
+			<CardBody className="flex flex-row gap-[10px] p-0">
+				<Image width="120px" src={props.thumbnailUrl}></Image>
 				<div className="flex flex-col gap-[10px]">
-					<h3 className="font-bold">Smiya ta3 l film</h3>
-					<h4 className="text-[12px] text-[rgba(255,255,255,0.87)]">quentin tarantino</h4>
+					<span className="font-bold text-lg">{props.movieName}</span>
+					<span className="text-sm text-second-white">{props.releaseYear}</span>
 				</div>
 			</CardBody>
 		</Card>
