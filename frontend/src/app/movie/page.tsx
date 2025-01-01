@@ -1,47 +1,69 @@
 import Comment from './comment';
 import CommentInput from './comment-input';
+import MoviePlayer from './movie-player';
 import Suggestion from './suggestion';
 
 export default function Home() {
 	return (
-		<>
-			<div className="flex w-dvw justify-center gap-[20px] mt-[5dvh]">
-				<div className="w-[1000px] flex flex-col gap-[20px]">
-					<div className="bg-green-400 w-full">
-						<iframe
-							className="aspect-video w-[1000px]"
-							src="https://www.youtube.com/embed/WRRF4NZB3WQ"
-							title="7 Early Signs of Autism Every Parent Should Know"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-					</div>
-					<div className="rounded-[28px] p-[20px] flex flex-col items-center gap-[20px] max-h-[500px] overflow-y-scroll">
+		<main className="w-screen h-dvh bg-black flex justify-center">
+			<div className="flex flex-wrap w-dvw justify-center gap-[20px]">
+				<div className="lg:w-[60dvw] md:w-full">
+					<MoviePlayer />
+					<div className="rounded-[28px] p-[20px] flex flex-col gap-[20px] max-h-[500px] overflow-y-scroll">
 						<CommentInput />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
-						<Comment />
+						<Comment
+							id="0"
+							commentorImgUrl="https://i.pravatar.cc/300"
+							commentorUsername="Anass Zakariya"
+							commentContent="driss elkhyatte"
+						/>
+						<Comment
+							id="1"
+							commentorImgUrl="https://i.pravatar.cc/300"
+							commentorUsername="Anass Zakariya"
+							commentContent="driss elkhyatte"
+						/>
+						<Comment
+							id="2"
+							commentorImgUrl="https://i.pravatar.cc/300"
+							commentorUsername="Anass Zakariya"
+							commentContent="driss elkhyatte"
+						/>
 					</div>
 				</div>
-				<div className="w-[400px]">
-					<Suggestion />
-					<Suggestion />
-					<Suggestion />
-					<Suggestion />
-					<Suggestion />
-					<Suggestion />
-					<Suggestion />
-					<Suggestion />
+				<div className="lg:w-[400px] flex flex-col gap-[10px] md:w-full md:p-[20px] lg:p-0">
+					<Suggestion
+						id="0"
+						movieName="Movie name placeholder"
+						releaseYear="2024"
+						thumbnailUrl="https://nextui.org/images/hero-card-complete.jpeg"
+					/>
+					<Suggestion
+						id="0"
+						movieName="Movie name placeholder"
+						releaseYear="2024"
+						thumbnailUrl="https://nextui.org/images/hero-card-complete.jpeg"
+					/>
+					<Suggestion
+						id="0"
+						movieName="Movie name placeholder"
+						releaseYear="2024"
+						thumbnailUrl="https://nextui.org/images/hero-card-complete.jpeg"
+					/>
+					<Suggestion
+						id="0"
+						movieName="Movie name placeholder"
+						releaseYear="2024"
+						thumbnailUrl="https://nextui.org/images/hero-card-complete.jpeg"
+					/>
+					<Suggestion
+						id="0"
+						movieName="Movie name placeholder"
+						releaseYear="2024"
+						thumbnailUrl="https://nextui.org/images/hero-card-complete.jpeg"
+					/>
 				</div>
 			</div>
-		</>
+		</main>
 	);
 }
