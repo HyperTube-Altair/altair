@@ -12,7 +12,7 @@ export default function Suggestion(props: Props) {
 	return (
 		<Card isBlurred>
 			<CardBody className="flex flex-row gap-[10px] p-0">
-				<Image width="120px" alt='suggested-video' src={props.thumbnailUrl}></Image>
+				<Image width="120px" alt="suggested-video" src={props.thumbnailUrl}></Image>
 				<div className="flex flex-col gap-[10px]">
 					<span className="font-bold text-lg">{props.movieName}</span>
 					<span className="text-sm text-second-white">{props.releaseYear}</span>

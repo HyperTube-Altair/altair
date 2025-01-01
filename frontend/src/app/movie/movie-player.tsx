@@ -1,4 +1,3 @@
-
 export default function MoviePlayer() {
 	return (
 		<div className="flex flex-col">
