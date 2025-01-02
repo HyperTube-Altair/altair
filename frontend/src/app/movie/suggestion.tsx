@@ -8,7 +8,7 @@ interface ISuggestionProps {
 	id: string;
 }
 
-export default function Suggestion(props: Props) {
+export default function Suggestion(props: ISuggestionProps) {
 	return (
 		<Card isBlurred>
 			<CardBody className="flex flex-row gap-[10px] p-0">
