@@ -8,7 +8,7 @@ interface ICommentProps {
 	id: string;
 }
 
-export default function Comment(props: Props) {
+export default function Comment(props: ICommentProps) {
 	return (
 		<div className="w-full h-fit">
 			<Card className="w-full">
