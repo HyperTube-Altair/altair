@@ -1,7 +1,7 @@
 import { Avatar } from '@nextui-org/avatar';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 
-interface Props {
+interface ICommentProps {
 	commentContent: string;
 	commentorImgUrl: string;
 	commentorUsername: string;
