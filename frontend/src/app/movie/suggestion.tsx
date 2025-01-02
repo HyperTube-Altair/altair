@@ -1,7 +1,7 @@
 import { Card, CardBody } from '@nextui-org/card';
 import { Image } from '@nextui-org/image';
 
-interface Props {
+interface ISuggestionProps {
 	thumbnailUrl: string;
 	movieName: string;
 	releaseYear: string;
