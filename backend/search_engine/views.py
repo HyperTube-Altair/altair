@@ -1,5 +1,4 @@
 import asyncio
-from functools import wraps
 
 import httpx
 from drf_spectacular.utils import extend_schema
@@ -8,16 +7,10 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+from api.utils.to_async import to_async
+
 from .serializers import BaseQuerySerializer, SearchQuerySerializer
 from .services.SearchService import SearchService
-
-
-def to_async(blocking):
-    @wraps(blocking)
-    def run_wrapper(*args, **kwargs):
-        return asyncio.run(blocking(*args, **kwargs))
-
-    return run_wrapper
 
 
 @extend_schema(
