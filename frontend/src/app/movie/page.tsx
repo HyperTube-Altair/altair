@@ -15,7 +15,7 @@ export default function Home() {
 							id="0"
 							commentorImgUrl="https://i.pravatar.cc/300"
 							commentorUsername="Anass Zakariya"
-							commentContent="driss elkhyatte"
+							commentContent="driss elkhyatteee"
 						/>
 						<Comment
 							id="1"
