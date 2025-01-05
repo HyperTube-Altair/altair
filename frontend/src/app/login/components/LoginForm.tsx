@@ -14,14 +14,14 @@ const LoginForm = () => {
 					radius="full"
 					label="Username"
 					endContent={<UserIcon className="w-6 text-white self-center" />}
-					/>
+				/>
 				<Input
 					type="password"
 					variant="bordered"
 					radius="full"
 					label="Password"
 					endContent={<LockClosedIcon className="w-6 text-white self-center" />}
-					/>
+				/>
 				<span className="text-gray-400 w-full flex-row text-end hover:text-blue-500 cursor-pointer">
 					Forgot password?
 				</span>
