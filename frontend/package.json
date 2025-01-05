@@ -9,10 +9,13 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "check-format": "prettier --check ."
+    "check-format": "prettier --check .",
+    "openapi-ts": "openapi-ts",
+    "genrate-client": "openapi-ts -i localhost/api/v1/openapi.yml -o src/api-client -c @hey-api/client-fetch"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
+    "@hey-api/client-fetch": "^0.5.7",
     "@nextui-org/react": "^2.4.6",
     "@reduxjs/toolkit": "^2.2.7",
     "framer-motion": "^11.3.29",
@@ -23,6 +26,7 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
+    "@hey-api/openapi-ts": "^0.60.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
