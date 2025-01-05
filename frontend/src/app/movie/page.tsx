@@ -1,11 +1,11 @@
-import Comment from './comment';
-import CommentInput from './comment-input';
-import MoviePlayer from './movie-player';
-import Suggestion from './suggestion';
+import Comment from './components/comment';
+import CommentInput from './components/comment-input';
+import MoviePlayer from './components/movie-player';
+import Suggestion from './components/suggestion';
 
 export default function Home() {
 	return (
-		<main className="w-screen h-dvh bg-black flex justify-center">
+		<main className="w-screen h-screen bg-black flex justify-center">
 			<div className="flex flex-wrap w-dvw justify-center gap-[20px]">
 				<div className="lg:w-[60dvw] md:w-full">
 					<MoviePlayer />
