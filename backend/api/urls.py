@@ -1,9 +1,5 @@
 from django.urls import include, path
-from drf_spectacular.views import (
-    SpectacularAPIView,
-    SpectacularRedocView,
-    SpectacularSwaggerView,
-)
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 import api.views as views
 import search_engine.urls as search_engine_urls
@@ -16,10 +12,5 @@ urlpatterns = [
         "schema/swagger-ui/",
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="swagger-ui",
-    ),
-    path(
-        "schema/redoc/",
-        SpectacularRedocView.as_view(url_name="schema"),
-        name="redoc",
     ),
 ]
