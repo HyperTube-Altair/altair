@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "api",
     "movies",
     "users",
     "comments",
@@ -170,8 +171,8 @@ REST_FRAMEWORK = {
 
 # api swagger settings
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Your Project API",
-    "DESCRIPTION": "Your project description",
+    "TITLE": "Altair HyperTube API",
+    "DESCRIPTION": "API for Altair HyperTube 42 project",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }
