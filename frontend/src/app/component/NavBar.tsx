@@ -15,14 +15,14 @@ import {
 } from '@nextui-org/react';
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 
-export const NavBar = () => {
+const NavBar = () => {
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [searchValue, setSearchValue] = useState<string | undefined>(undefined);
 
 	const applySearch = (searchValue: string | undefined): void => {
 		if (searchValue) {
 			// Perform the search operation using the searchValue
-			console.log('Searching for:', searchValue);
+			// console.log('Searching for:', searchValue);
 			// Add your search logic here
 		} else {
 			// Handle the case when searchValue is undefined
@@ -100,3 +100,5 @@ export const NavBar = () => {
 		</Navbar>
 	);
 };
+
+export default NavBar;

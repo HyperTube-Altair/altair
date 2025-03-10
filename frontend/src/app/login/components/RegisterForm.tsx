@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import { Input, Button } from '@nextui-org/react';
 import { LockClosedIcon, UserIcon, EnvelopeIcon } from '@heroicons/react/16/solid';
 
@@ -64,15 +65,21 @@ const RegisterForm = () => {
 					Register
 				</Button>
 				<span className="flex flex-col items-center text-gray-400">Or</span>
-				<div className="bg-white/20 rounded-full p-1 flex items-center space-x-3">
-					<img
+				<div className="bg-white/20 rounded-full p-1 flex items-center space-x-3 border-2 border-gray-400">
+					<Image
+						width={1}
+						height={1}
+						alt="test"
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXfAZMOWHDQ3DKE63A9jWhIqQaKcKqUIXvzg&s"
 						className="w-8 rounded-full"
 					/>
 					<span className="text-gray-300">Register with 42</span>
 				</div>
-				<div className="bg-white/15 rounded-full p-1 flex items-center space-x-3">
-					<img
+				<div className="bg-white/15 rounded-full p-1 flex items-center space-x-3 border-2 border-gray-400">
+					<Image
+						width={1}
+						height={1}
+						alt="test"
 						src="https://w7.pngwing.com/pngs/63/1016/png-transparent-google-logo-google-logo-g-suite-chrome-text-logo-chrome.png"
 						className="w-8 rounded-full"
 					/>
